@@ -1,0 +1,3 @@
+useDynLib(seq2funR, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
