@@ -532,6 +532,8 @@ class Options
         // file name of read2 output
         string out2;
 
+        string jsonFile;
+        
         // enable output mapped reads
         bool outputMappedCleanReads;
 

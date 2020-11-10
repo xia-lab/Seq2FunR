@@ -214,6 +214,13 @@ bool PairEndProcessor::process() {
 
 	S2FReport();
 	sortedSpeciesFreqVector.clear();
+	
+	
+	JsonReporter jr(mOptions);
+	jr.setDupHist(dupHist, dupMeanGC, dupRate);
+	jr.setInsertHist(mInsertSizeHist, peakInsertSize);
+	jr.report(finalFilterResult, finalPreStats1, finalPostStats1, finalPreStats2, finalPostStats2);
+	
 	// clean up
 	for (int t = 0; t < mOptions->thread; t++) {
 		delete threads[t];

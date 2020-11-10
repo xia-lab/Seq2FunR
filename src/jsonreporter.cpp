@@ -38,7 +38,7 @@ void JsonReporter::report(FilterResult * result,
 {
     ofstream ofs;
 
-    ofs.open("aa.json", ifstream::out);
+    ofs.open(mOptions->jsonFile, ifstream::out);
 
     ofs << "{" << endl;
 

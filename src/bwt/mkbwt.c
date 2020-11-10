@@ -918,6 +918,8 @@ void print_time(char *text) {
 }
 
 
+// function area(.):
+// [[Rcpp::export]]
 
 int mkbwt(int argc, char **argv) {
   long approx_seqlen, bwtlen;

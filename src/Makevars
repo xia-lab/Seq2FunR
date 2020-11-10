@@ -1,14 +1,9 @@
 CXX_STD = CXX11
 PKG_CPPFLAGS = -I./include -I./include/ncbi-blast+
 CFILES = $(wildcard bwt/*.c include/ncbi-blast+/algo/blast/core/pattern.c include/ncbi-blast+/algo/blast/core/blast_posit.c include/ncbi-blast+/algo/blast/composition_adjustment/matrix_frequency_data.c include/ncbi-blast+/algo/blast/core/blast_dynarray.c include/ncbi-blast+/algo/blast/core/matrix_freq_ratios.c include/ncbi-blast+/algo/blast/core/blast_encoding.c include/ncbi-blast+/algo/blast/core/blast_stat.c include/ncbi-blast+/algo/blast/core/blast_filter.c include/ncbi-blast+/algo/blast/core/blast_util.c include/ncbi-blast+/algo/blast/core/blast_message.c include/ncbi-blast+/algo/blast/core/ncbi_erf.c include/ncbi-blast+/algo/blast/core/blast_options.c include/ncbi-blast+/algo/blast/core/ncbi_math.c include/ncbi-blast+/algo/blast/core/blast_program.c include/ncbi-blast+/algo/blast/core/ncbi_std.c include/ncbi-blast+/algo/blast/core/blast_psi_priv.c include/ncbi-blast+/util/tables/raw_scoremat.c include/ncbi-blast+/algo/blast/core/blast_query_info.c include/ncbi-blast+/algo/blast/core/blast_seg.c)
-
-#$(widlcard include/ncbi-blast+/algo/blast/core/*.c) \
-#$(widlcard include/ncbi-blast+/algo/blast/composition_adjustment/*.c) \
-#$(wildcard include/ncbi-blast+/util/tables/*.c) \
-#$(wildcard include/ncbi-blast+/*.c)
-
-
 CPPFILES = $(wildcard *.cpp)
+
+PKG_LIBS = -lz
 
 SOURCES = $(CFILES) $(CPPFILES)
 
@@ -21,4 +16,9 @@ OBJECTS = $(CFILES:.c=.o) $(CPPFILES:.cpp=.o)
 
 #PKG_CXXFLAGS = -Isum
 #PKG_CXXFLAGS = -Isum $(INCLUDES)
-PKG_LIBS = -lz
+
+
+all: $(SHLIB)
+clean:
+	@rm -f $(OBJECTS)
+

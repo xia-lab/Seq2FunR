@@ -5,19 +5,9 @@
 
 using namespace Rcpp;
 
-// rcpp_hello_world
-List rcpp_hello_world();
-RcppExport SEXP _seq2funR_rcpp_hello_world() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpp_hello_world());
-    return rcpp_result_gen;
-END_RCPP
-}
-// seq2funM
-int seq2funM(std::string sampletable, std::string genemap, std::string tfmi, bool outputMappedCleanReads, bool profiling, std::string in1, std::string in2, std::string prefix, std::string mode, int mismatch, int minscore, int minlength, int maxtranslength, int nThreads, bool verbose);
-RcppExport SEXP _seq2funR_seq2funM(SEXP sampletableSEXP, SEXP genemapSEXP, SEXP tfmiSEXP, SEXP outputMappedCleanReadsSEXP, SEXP profilingSEXP, SEXP in1SEXP, SEXP in2SEXP, SEXP prefixSEXP, SEXP modeSEXP, SEXP mismatchSEXP, SEXP minscoreSEXP, SEXP minlengthSEXP, SEXP maxtranslengthSEXP, SEXP nThreadsSEXP, SEXP verboseSEXP) {
+// seq2fun
+int seq2fun(std::string sampletable, std::string genemap, std::string tfmi, bool outputMappedCleanReads, bool profiling, std::string in1, std::string in2, std::string prefix, std::string mode, int mismatch, int minscore, int minlength, int maxtranslength, int nThreads, bool verbose);
+RcppExport SEXP _seq2funR_seq2fun(SEXP sampletableSEXP, SEXP genemapSEXP, SEXP tfmiSEXP, SEXP outputMappedCleanReadsSEXP, SEXP profilingSEXP, SEXP in1SEXP, SEXP in2SEXP, SEXP prefixSEXP, SEXP modeSEXP, SEXP mismatchSEXP, SEXP minscoreSEXP, SEXP minlengthSEXP, SEXP maxtranslengthSEXP, SEXP nThreadsSEXP, SEXP verboseSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -36,14 +26,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type maxtranslength(maxtranslengthSEXP);
     Rcpp::traits::input_parameter< int >::type nThreads(nThreadsSEXP);
     Rcpp::traits::input_parameter< bool >::type verbose(verboseSEXP);
-    rcpp_result_gen = Rcpp::wrap(seq2funM(sampletable, genemap, tfmi, outputMappedCleanReads, profiling, in1, in2, prefix, mode, mismatch, minscore, minlength, maxtranslength, nThreads, verbose));
+    rcpp_result_gen = Rcpp::wrap(seq2fun(sampletable, genemap, tfmi, outputMappedCleanReads, profiling, in1, in2, prefix, mode, mismatch, minscore, minlength, maxtranslength, nThreads, verbose));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_seq2funR_rcpp_hello_world", (DL_FUNC) &_seq2funR_rcpp_hello_world, 0},
-    {"_seq2funR_seq2funM", (DL_FUNC) &_seq2funR_seq2funM, 15},
+    {"_seq2funR_seq2fun", (DL_FUNC) &_seq2funR_seq2fun, 15},
     {NULL, NULL, 0}
 };
 

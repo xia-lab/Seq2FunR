@@ -140,6 +140,12 @@ bool SingleEndProcessor::process() {
 	
 	S2FReport();
 	sortedSpeciesFreqVector.clear();
+	
+	// make JSON report
+	JsonReporter jr(mOptions);
+	jr.setDupHist(dupHist, dupMeanGC, dupRate);
+	jr.report(finalFilterResult, finalPreStats, finalPostStats);
+	
 		// clean up
 	for (int t = 0; t < mOptions->thread; t++) {
 		delete threads[t];

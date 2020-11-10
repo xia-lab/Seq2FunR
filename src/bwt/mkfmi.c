@@ -21,6 +21,9 @@ void error(char * format,
     exit(1);
 }
 
+// function area(.):
+// [[Rcpp::export]]
+
 int mkfmi(int     argc,
          char ** argv)
 {

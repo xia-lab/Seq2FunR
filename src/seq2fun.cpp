@@ -23,7 +23,7 @@ std::mutex logmtx;
 //' @export
 // [[Rcpp::export]]
 
-int seq2funM(std::string sampletable,
+int seq2fun(std::string sampletable,
              std::string genemap,
              std::string tfmi,
              bool outputMappedCleanReads = false,
@@ -41,8 +41,6 @@ int seq2funM(std::string sampletable,
   time_t t_begin = time(NULL);
   
   Options opt;
-  //opt.seq2funProgPath = ;
-  opt.seq2funDir = "../";
   
   opt.thread = nThreads;
   int n_t = std::thread::hardware_concurrency();
@@ -161,6 +159,7 @@ int seq2funM(std::string sampletable,
 		opt.in1 = in1;
 		opt.in2 = in2;
 		std::string outFName;
+		opt.jsonFile = opt.mHomoSearchOptions.prefix + "_report.json";
 		if (opt.outputMappedCleanReads) {
 			opt.out1 = opt.mHomoSearchOptions.prefix + "_mapped_R1.fastq.gz";
 			if (opt.isPaired()) opt.out2 = opt.mHomoSearchOptions.prefix + "_mapped_R2.fastq.gz";
@@ -270,7 +269,8 @@ int seq2funM(std::string sampletable,
 			make_dir_con(opt.mHomoSearchOptions.prefix);
 			opt.in1 = it.in1;
 			opt.in2 = it.in2;
-
+			opt.jsonFile = it.prefix +  "_report.json";
+			
 			if (opt.outputMappedCleanReads) {
 				opt.out1 = it.prefix + "_mapped_R1.fastq.gz";
 				if (opt.isPaired()) opt.out2 = it.prefix + "_mapped_R2.fastq.gz";
