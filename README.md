@@ -20,7 +20,7 @@ install.packages("pacman")
 
 library(pacman)
 
-pacman::p_load(crayon, magrittr, stringr);
+pacman::p_load(crayon, magrittr, stringr, tidyverse, rjson);
 ```
 ### Step 2. Install the package 
 
