@@ -11,7 +11,8 @@ seq2fun = function(suffixNameR1 = "_R1.fastq.gz",
                    outputMappedCleanReads = FALSE,
                    profiling = FALSE,
                    nThreads = 8,
-                   verbose = TRUE){
+                   verbose = TRUE,
+                   ...){
   
   if(!require("pacman")) install.packages("pacman");
   pacman::p_load(crayon, magrittr, stringr);

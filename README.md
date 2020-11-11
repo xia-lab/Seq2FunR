@@ -42,6 +42,35 @@ devtools::install_github("xia-lab/Seq2FunR")
 ```
 
 ## Case Studies
+still in developing, need to make it as a built in data;
+
+```R
+setwd("/working/dir/having/your/reads");
+seq2fun(suffixNameR1 = "_R1.fastq.gz",
+        suffixNameR2 = "_R2.fastq.gz",
+        genemap = "database/gene_taxa_matched.txt",
+        tfmi = "database/twins_IGC.geneset.out.renew.matched.clean.taxon.fmi");
+```
+
+#For reads quality
+
+```R
+to get the graph of quality scores;
+
+getReadsQuality(inputFile = "outputSeq2fun/SRR6468595_report.json")
+
+
+to get graph of insert size distribution;
+
+getInsertSizeDistribution(inputFile = "outputSeq2fun/SRR6468595_report.json")
+
+
+to get reads duplication levels;
+
+getDuplicationLevel(inputFile = "outputSeq2fun/SRR6468595_report.json")
+
+```
+
 
 
 
