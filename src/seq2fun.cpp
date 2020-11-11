@@ -23,7 +23,7 @@ std::mutex logmtx;
 //' @export
 // [[Rcpp::export]]
 
-int seq2fun(std::string sampletable,
+int seq2funr(std::string sampletable,
              std::string genemap,
              std::string tfmi,
              bool outputMappedCleanReads = false,

@@ -2,7 +2,7 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' @export
-seq2fun <- function(sampletable, genemap, tfmi, outputMappedCleanReads = FALSE, profiling = FALSE, in1 = "", in2 = "", prefix = "", mode = "tGREEDY", mismatch = 2L, minscore = 65L, minlength = 11L, maxtranslength = 65L, nThreads = 8L, verbose = TRUE) {
-    .Call(`_seq2funR_seq2fun`, sampletable, genemap, tfmi, outputMappedCleanReads, profiling, in1, in2, prefix, mode, mismatch, minscore, minlength, maxtranslength, nThreads, verbose)
+seq2funr <- function(sampletable, genemap, tfmi, outputMappedCleanReads = FALSE, profiling = FALSE, in1 = "", in2 = "", prefix = "", mode = "tGREEDY", mismatch = 2L, minscore = 65L, minlength = 11L, maxtranslength = 65L, nThreads = 8L, verbose = TRUE) {
+    .Call(`_seq2funR_seq2funr`, sampletable, genemap, tfmi, outputMappedCleanReads, profiling, in1, in2, prefix, mode, mismatch, minscore, minlength, maxtranslength, nThreads, verbose)
 }
 
